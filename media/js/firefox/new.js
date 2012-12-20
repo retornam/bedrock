@@ -12,7 +12,7 @@
             $('html').addClass('winIE8');
         }
 
-        $('html').addClass('ready-for-scene2');
+        $('body').addClass('ready-for-scene2');
     });
 
     // Bind events on domReady.
