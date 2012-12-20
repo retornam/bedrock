@@ -14,14 +14,33 @@
         var img_os = (site.platform === 'osx') ? 'mac' : 'win';
 
         $('html').addClass('ready-for-scene2');
-        $install2.attr('src', $install2.data('src').replace(/win/gi, img_os));
-        $install3.attr('src', $install3.data('src').replace(/win/gi, img_os));
+
+        //$install2.attr('src', $install2.data('src').replace(/win/gi, img_os));
+        //$install3.attr('src', $install3.data('src').replace(/win/gi, img_os));
+
+        var install2_img = $('<img>', {
+            src: $install2.data('src').replace(/win/gi, img_os),
+            id: 'install2'
+        });
+        $install2.replaceWith(install2_img);
+
+        var install3_img = $('<img>', {
+            src: $install3.data('src').replace(/win/gi, img_os),
+            id: 'install3'
+        });
+        $install3.replaceWith(install3_img);
 
         // Screen 1 is unique for IE < 9
         if (site.platform === 'windows' && $.browser.msie && $.browser.version < 9) {
             img_os = 'winIE8';
         }
-        $install1.attr('src', $install1.data('src').replace(/win/gi, img_os));
+        //$install1.attr('src', $install1.data('src').replace(/win/gi, img_os));
+
+        var install1_img = $('<img>', {
+            src: $install1.data('src').replace(/win/gi, img_os),
+            id: 'install1'
+        });
+        $install1.replaceWith(install1_img);
     });
 
     // Bind events on domReady.
