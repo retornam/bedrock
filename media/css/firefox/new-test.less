@@ -148,28 +148,23 @@
         }
     }
 
-    #install1 {
-        background-image: url(/media/img/firefox/new/install1-win.png);
-        &.mac {
-            background-image: url(/media/img/firefox/new/install1-mac.png);
-        }
-        &.winIE8 {
-            background-image: url(/media/img/firefox/new/install1-winIE8.png);
-        }
-    }
-    #install2 {
-        background-image: url(/media/img/firefox/new/install2-win.png);
-        &.mac {
-            background-image: url(/media/img/firefox/new/install2-mac.png);
-        }
-    }
-    #install3 {
-        margin-right: 0;
-        background-image: url(/media/img/firefox/new/install3-win.png);
-        &.mac {
-            background-image: url(/media/img/firefox/new/install3-mac.png);
-        }
-    }
+    #install3 { margin-right: 0; }
+}
+
+.osx.ready-for-scene2 {
+    #install1 { background-image: url(/media/img/firefox/new/install1-mac.png); }
+    #install2 { background-image: url(/media/img/firefox/new/install2-mac.png); }
+    #install3 { background-image: url(/media/img/firefox/new/install3-mac.png); }
+}
+
+.windows.ready-for-scene2 {
+    #install1 { background-image: url(/media/img/firefox/new/install1-win.png); }
+    #install2 { background-image: url(/media/img/firefox/new/install2-win.png); }
+    #install3 { background-image: url(/media/img/firefox/new/install3-win.png); }
+}
+
+.windows.winIE8.ready-for-scene2 #install1 {
+    background-image: url(/media/img/firefox/new/install1-winIE8.png);
 }
 
 .osx .install-win { display: none; }
