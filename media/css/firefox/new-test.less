@@ -143,14 +143,15 @@
             font-size: 12px;
             color: @textColorTertiary;
             font-style: italic;
-            img {
-                display: block;
-                margin: 0 0 5px 0;
-                width: 100%;
-                height: auto;
-            }
         }
     }
+}
+
+.installation li img {
+    display: block;
+    margin: 0 0 5px 0;
+    width: 248px;
+    height: 191px;
 }
 
 .osx .install-win { display: none; }
@@ -272,6 +273,11 @@ noscript {
                 padding: 0 15px;
             }
         }
+    }
+
+    .installation li img {
+        width: 200px;
+        height: 154px;
     }
 
     .android #features li {

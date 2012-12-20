@@ -15,18 +15,17 @@
 
         $('html').addClass('ready-for-scene2');
 
-        //$install2.attr('src', $install2.data('src').replace(/win/gi, img_os));
-        //$install3.attr('src', $install3.data('src').replace(/win/gi, img_os));
-
         var install2_img = $('<img>', {
             src: $install2.data('src').replace(/win/gi, img_os),
-            id: 'install2'
+            id: 'install2',
+            alt: ''
         });
         $install2.replaceWith(install2_img);
 
         var install3_img = $('<img>', {
             src: $install3.data('src').replace(/win/gi, img_os),
-            id: 'install3'
+            id: 'install3',
+            alt: ''
         });
         $install3.replaceWith(install3_img);
 
@@ -34,11 +33,11 @@
         if (site.platform === 'windows' && $.browser.msie && $.browser.version < 9) {
             img_os = 'winIE8';
         }
-        //$install1.attr('src', $install1.data('src').replace(/win/gi, img_os));
 
         var install1_img = $('<img>', {
             src: $install1.data('src').replace(/win/gi, img_os),
-            id: 'install1'
+            id: 'install1',
+            alt: ''
         });
         $install1.replaceWith(install1_img);
     });
