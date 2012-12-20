@@ -136,16 +136,41 @@
         li {
             float: left;
             width: 248px;
-            padding: 0 26px;
+            padding: 196px 0 0 0;
             overflow: hidden;
-            margin: 0;
+            margin: 0 26px;
             text-align: left;
             font-size: 12px;
             color: @textColorTertiary;
             font-style: italic;
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+    }
+
+    #install1 {
+        background-image: url(/media/img/firefox/new/install1-win.png);
+        &.mac {
+            background-image: url(/media/img/firefox/new/install1-mac.png);
+        }
+        &.winIE8 {
+            background-image: url(/media/img/firefox/new/install1-winIE8.png);
+        }
+    }
+    #install2 {
+        background-image: url(/media/img/firefox/new/install2-win.png);
+        &.mac {
+            background-image: url(/media/img/firefox/new/install2-mac.png);
+        }
+    }
+    #install3 {
+        background-image: url(/media/img/firefox/new/install3-win.png);
+        &.mac {
+            background-image: url(/media/img/firefox/new/install3-mac.png);
         }
     }
 }
+
 
 .installation li img {
     display: block;
@@ -270,7 +295,8 @@ noscript {
             width: 700px;
             li {
                 width: 200px;
-                padding: 0 15px;
+                padding: 159px 0 0 0;
+                margin: 0 15px;
             }
         }
     }
@@ -313,7 +339,7 @@ noscript {
     }
     #masthead h2 { display: none; }
     .theater, .stage, .scene {
-        height: 310px;
+        height: 356px;
     }
     #main-feature {
         padding-bottom: 0px;
@@ -385,6 +411,8 @@ noscript {
                 }
             }
         }
+
+        #install1, #install1.mac, #install1.winIE8, #install2, #install2.mac, #install3, #install3.mac { background: none; }
     }
 
     .android {

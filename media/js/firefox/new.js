@@ -15,6 +15,7 @@
 
         $('html').addClass('ready-for-scene2');
 
+        /*
         var install2_img = $('<img>', {
             src: $install2.data('src').replace(/win/gi, img_os),
             id: 'install2',
@@ -28,18 +29,26 @@
             alt: ''
         });
         $install3.replaceWith(install3_img);
+        */
+
+        $install2.addClass(img_os);
+        $install3.addClass(img_os);
 
         // Screen 1 is unique for IE < 9
         if (site.platform === 'windows' && $.browser.msie && $.browser.version < 9) {
             img_os = 'winIE8';
         }
 
+        $install1.addClass(img_os);
+
+        /*
         var install1_img = $('<img>', {
             src: $install1.data('src').replace(/win/gi, img_os),
             id: 'install1',
             alt: ''
         });
         $install1.replaceWith(install1_img);
+        */
     });
 
     // Bind events on domReady.
