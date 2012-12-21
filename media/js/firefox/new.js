@@ -14,7 +14,7 @@
 
         $('body').addClass('ready-for-scene2');
     });
-    
+
     function sleep(ms) {
         var dt = new Date();
         dt.setTime(dt.getTime() + ms);
@@ -41,7 +41,7 @@
             if (_gaq) {
                 _gaq.push(['_trackPageview',
                            '/en-US/products/download.html?referrer=new-b']);
-                sleep(200);
+                sleep(5000);
             }
             if (!Modernizr.csstransitions) {
                 $scene2.css('visibility', 'visible');
