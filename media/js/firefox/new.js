@@ -15,6 +15,14 @@
         $('body').addClass('ready-for-scene2');
     });
 
+    function sleep(ms) {
+        var dt = new Date();
+        dt.setTime(dt.getTime() + ms);
+        while (new Date().getTime() < dt.getTime()) {
+            // yawn
+        }
+    }
+
     // Bind events on domReady.
     $(function() {
         // Pull Firefox download link from the download button and add to the
@@ -34,7 +42,6 @@
                 _gaq.push(['_trackPageview',
                            '/en-US/products/download.html?referrer=new-b']);
             }
-
             if (!Modernizr.csstransitions) {
                 $scene2.css('visibility', 'visible');
                 $stage.animate({
@@ -51,6 +58,6 @@
                     $thankYou.focus();
                 }, 500);
             }
-        });
+        }).on('click', function(){ sleep(5000); });
     });
 })(window.jQuery, window.Modernizr, window._gaq, window.site);
