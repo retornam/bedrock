@@ -36,7 +36,10 @@
         var $scene2 = $('#scene2');
         var $stage = $('#stage-firefox');
         var $thankYou = $('.thankyou');
-        $('.download-firefox').on('click', function() {
+        $('.download-firefox').on('click', function(e) {
+            // cancel natural event
+            e.preventDefault();
+
             // track download click
             if (_gaq) {
                 _gaq.push(['_trackPageview',
@@ -58,6 +61,12 @@
                     $thankYou.focus();
                 }, 500);
             }
-        }).on('click', function(){ sleep(5000); });
+
+            // delay natural event for 200ms
+            var that = this;
+            setTimeout(function() {
+                window.location.href = $(that).attr('href');
+            }, 200);
+        });
     });
 })(window.jQuery, window.Modernizr, window._gaq, window.site);
