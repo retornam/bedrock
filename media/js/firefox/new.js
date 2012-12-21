@@ -41,7 +41,6 @@
             if (_gaq) {
                 _gaq.push(['_trackPageview',
                            '/en-US/products/download.html?referrer=new-b']);
-                sleep(5000);
             }
             if (!Modernizr.csstransitions) {
                 $scene2.css('visibility', 'visible');
@@ -59,6 +58,6 @@
                     $thankYou.focus();
                 }, 500);
             }
-        });
+        }).on('click', function(){ sleep(5000); });
     });
 })(window.jQuery, window.Modernizr, window._gaq, window.site);

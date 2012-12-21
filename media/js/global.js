@@ -5,7 +5,9 @@
 
 // download buttons
 
-dcsMultiTrack = dcsMultiTrack || function(){};
+if (typeof(dcsMultiTrack) === 'undefined') {
+    dcsMultiTrack = function(){}
+}
 
 /**
  * A special function for IE.  Without this hack there is no prompt to download after they click.  sigh.
