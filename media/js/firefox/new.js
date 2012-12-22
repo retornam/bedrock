@@ -15,14 +15,6 @@
         $('body').addClass('ready-for-scene2');
     });
 
-    function sleep(ms) {
-        var dt = new Date();
-        dt.setTime(dt.getTime() + ms);
-        while (new Date().getTime() < dt.getTime()) {
-            // yawn
-        }
-    }
-
     var ga_track = function() {
         if (_gaq) {
             _gaq.push(['_trackPageview',
