@@ -23,6 +23,20 @@
         }
     }
 
+    var ga_track = function() {
+        if (_gaq) {
+            _gaq.push(['_trackPageview',
+                       '/en-US/products/download.html?referrer=new-b']);
+        }
+    };
+
+    var dl_redirect = function(url) {
+        // delay redirect to ensure GA tracking occurs
+        setTimeout(function() {
+            window.location.href = url;
+        }, 200);
+    };
+
     // Bind events on domReady.
     $(function() {
         // Pull Firefox download link from the download button and add to the
@@ -30,7 +44,13 @@
         // TODO: Remove and generate link in bedrock.
         var $li = $('.download-list li:visible').filter(':first');
         var ff_dl_link = $li.find('a:first').attr('href');
-        $('#direct-download-link').attr('href', ff_dl_link);
+        $('#direct-download-link').attr('href', ff_dl_link).on('click', function(e) {
+            e.preventDefault();
+
+            ga_track();
+
+            dl_redirect($(this).attr('href'));
+        });
 
         // Trigger animation after download.
         var $scene2 = $('#scene2');
@@ -40,11 +60,8 @@
             // cancel natural event
             e.preventDefault();
 
-            // track download click
-            if (_gaq) {
-                _gaq.push(['_trackPageview',
-                           '/en-US/products/download.html?referrer=new-b']);
-            }
+            ga_track();
+
             if (!Modernizr.csstransitions) {
                 $scene2.css('visibility', 'visible');
                 $stage.animate({
@@ -62,11 +79,7 @@
                 }, 500);
             }
 
-            // delay natural event for 200ms
-            var that = this;
-            setTimeout(function() {
-                window.location.href = $(that).attr('href');
-            }, 200);
+            dl_redirect($(this).attr('href'));
         });
     });
 })(window.jQuery, window.Modernizr, window._gaq, window.site);
