@@ -58,7 +58,7 @@ urlpatterns = patterns('',
     page('firefox/unsupported/EOL', 'firefox/unsupported/EOL.html'),
     page('firefox/unsupported/mac', 'firefox/unsupported/mac.html'),
     page('firefox/unsupported/details', 'firefox/unsupported/details.html'),
-
+    page('firefox/unsupported/unsupported-systems', 'firefox/unsupported/unsupported-systems.html'),
     url(r'^firefox/unsupported/win/$', views.windows_billboards),
     url('^dnt/$', views.dnt, name='firefox.dnt'),
     url(firstrun_re, views.FirstrunView.as_view(), name='firefox.firstrun'),

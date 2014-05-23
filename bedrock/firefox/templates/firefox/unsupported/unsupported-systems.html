@@ -1,0 +1,63 @@
+{# This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/. -#}
+
+{% set_lang_files "upgradedialog" %}
+{% extends "/firefox/base.html" %}
+
+{% block page_title_prefix %}{{_('Download Firefox')}} — {% endblock %}
+{% block page_title %}{{_('Unsupported Systems')}}{% endblock %}
+{% block body_id %}firefox-unsupported-systems{% endblock %}
+{% block extrahead %}
+  {{ css('firefox_unsupported_systems') }}
+{% endblock %}
+
+{% block content %}
+
+<div id="main-feature">
+     <h2>Thanks for choosing Firefox!</h2>
+     <p>We’re sorry to report this, but your computer does not meet the minimum system requirements to run this version.</p>
+     <p id="download-message"></p>
+</div>
+<div id="main-content">
+    <div id="sub-features">
+        <div id="help">
+            <h3>Need 
+                <span>Help?</span>
+            </h3>
+            <p>
+                Our Support page has plenty of answers, including full instructions for downloading and installing Firefox and a live chat feature to guide you through any tricky spots.
+            </p>
+            <a href="http://support.mozilla.org/en-US/kb/">Visit Firefox Support</a>
+        </div>
+        <div id="supported">
+            <h3>For more information on supported systems</h3>
+            <a href="/en-US/firefox/system-requirements.html"> View System Requirements</a>
+        </div>
+    </div>
+    <div class="clear">&nbsp;</div>
+    <div id="other-browsers">
+        <p>
+            To make your computer more secure, we recommend upgrading your operating system to a newer version as soon as possible (plus, you'll be able to use Firefox!). But, if you can't do so, here are some alternate browsers that should be compatible with your current system:
+        </p>
+        <ul>
+            <li>
+                <a href="http:///www.opera.com">Opera</a>
+                for Windows 95 and above and Mac OS 10.3 and above
+            </li>
+            <li>
+                <a href="http://www.icab.de">iCab</a>
+                for Mac OS 10.3 and above
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+Thanks for choosing Firefox!
+
+We're sorry to report this but your computer does not 
+meet the minimum  system requirements to run this version.
